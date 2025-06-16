@@ -1,4 +1,4 @@
-import "../src/style.css";
+import "/App.css";
 
 const skills = [
   {
@@ -68,18 +68,13 @@ function SkillList() {
   return (
     <div>
       {skills.map((item) => (
-        <Skill
-          skill={item.skill}
-          color={item.color}
-          level={item.level}
-          emoji="✌️"
-        />
+        <Skill skill={item.skill} color={item.color} level={item.level} />
       ))}
     </div>
   );
 }
 
-function Skill({ skill, color, level, emoji }) {
+function Skill({ skill, color, level }) {
   return (
     <div className="skill" style={{ backgroundColor: color }}>
       <span>{skill}</span>
@@ -88,7 +83,6 @@ function Skill({ skill, color, level, emoji }) {
         {level === "intermediate" && "✌️"}
         {level === "begginer" && "👶"}
       </span>
-      <span>{emoji}</span>
     </div>
   );
 }
